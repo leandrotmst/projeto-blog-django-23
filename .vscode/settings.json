@@ -1,0 +1,76 @@
+{
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[python]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.fixAll.unusedImports": "explicit",
+      "source.organizeImports": "explicit"
+    },
+    "python.sortImports.args": ["--profile", "black"],
+    "editor.defaultFormatter": "ms-python.autopep8",
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4
+  },
+  "code-runner.executorMap": {
+    "python": "clear ; python -u"
+  },
+  "code-runner.ignoreSelection": true,
+  "code-runner.runInTerminal": true,
+  "cSpell.enabled": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontFamily": "'Fira Code', Consolas, 'Dank Mono', 'Source Code Pro', 'Fira Code', Menlo, 'Inconsolata', 'Droid Sans Mono', 'DejaVu Sans Mono', 'Ubuntu Mono', 'Courier New', Courier, Monaco, monospace",
+  "editor.fontLigatures": false,
+  "editor.fontSize": 20,
+  "editor.hover.enabled": true,
+  "editor.rulers": [80, 120],
+  "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+  "editor.formatOnType": false, // required
+  "editor.formatOnPaste": true, // optional
+  "editor.formatOnSave": true, // optional
+  "editor.formatOnSaveMode": "file", // required to format on save
+  "files.autoSave": "onFocusChange", // optional but recommended
+  "vs-code-prettier-eslint.prettierLast": true, // set as "true" to run 'prettier' last not first
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
+  "python.formatting.provider": "black",
+  "python.linting.ruffEnabled": true,
+  "python.linting.enabled": true,
+  "explorer.compactFolders": false,
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportUnknownArgumentType": "none",
+    "reportUnknownLambdaType": "none",
+    "reportUnknownMemberType": "none",
+    "reportUnknownParameterType": "none",
+    "reportUnknownVariableType": "none"
+  },
+  "python.analysis.typeCheckingMode": "basic",
+  "python.defaultInterpreterPath": "./venv/bin/python",
+  "python.formatting.autopep8Args": [
+    "--indent-size=4",
+    "--max-line-length=80"
+    // "--ignore=E111"
+  ],
+  "python.formatting.provider": "none",
+  "python.languageServer": "Pylance",
+  "python.linting.flake8Args": [
+    // "--ignore=E111",
+  ],
+  "python.linting.flake8Enabled": true,
+  "python.linting.mypyEnabled": true,
+  "python.sortImports.args": ["--profile", "black"],
+  "python.testing.pytestEnabled": true,
+  "python.testing.unittestEnabled": false,
+  "terminal.integrated.fontFamily": "",
+  "terminal.integrated.fontSize": 24,
+  "window.zoomLevel": 0,
+  "workbench.colorTheme": "OM Theme (Night Owl Italic)",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.startupEditor": "none"
+}
