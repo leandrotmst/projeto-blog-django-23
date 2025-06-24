@@ -15,7 +15,7 @@
     "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
     "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
     "php": "php",
-    "python": "python -u",
+    "python": "clear; python -u",
     "perl": "perl",
     "perl6": "perl6",
     "ruby": "ruby",
@@ -101,7 +101,7 @@
       "reportUnknownLambdaType": "none",
       "reportUnknownParameterType": "none"
     },
-    // "python.defaultInterpreterPath": "./venv/bin/python",
+    "python.defaultInterpreterPath": "./venv/bin/python",
     "python.analysis.typeCheckingMode": "basic"
   },
   "cSpell.enabled": true,
