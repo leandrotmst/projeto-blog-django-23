@@ -20,4 +20,4 @@ class SiteSetupAdmin(admin.ModelAdmin):
     inlines = MenuLinkInline,
 
     def has_add_permission(self, request):
-        return not SiteSetup.objects.exists() # admin já criou sitesetup
+        return not SiteSetup.objects.exists()
