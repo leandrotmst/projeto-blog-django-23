@@ -3,7 +3,7 @@ from typing import Any
 from django.contrib.auth.models import User
 from django.db.models import Q
 from django.http import Http404
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect
 from django.views.generic import DetailView, ListView
 
 from blog.models import Page, Post
@@ -141,38 +141,34 @@ class PageDetailView(DetailView):
     slug_field = 'slug'
     context_object_name = 'page'
 
-
-def page(request, slug):
-    page_obj = Page.objects.filter(is_published=True).filter(slug=slug).first()
-
-    if page_obj is None:
-        raise Http404
-
-    page_title = f'{page_obj.title} - Página - '
-
-    return render(
-        request,
-        'blog/pages/page.html',
-        {
-            'page': page_obj,
+    def get_context_data(self, **kwargs):
+        ctx = super().get_context_data(**kwargs)
+        page = self.get_object()
+        page_title = f'{page.title} - Página - '
+        ctx.update({
             'page_title': page_title,
-        }
-    )
+        })
+        return ctx
+    
+    def get_queryset(self):
+        return super().get_queryset().filter(is_published=True)
 
 
-def post(request, slug):
-    post_obj = Post.objects.get_published().filter(slug=slug).first()
 
-    if post_obj is None:
-        raise Http404
+class PostDetailView(DetailView):
+    model = Post
+    template_name = 'blog/pages/post.html'
+    context_object_name = 'post'
 
-    page_title = f'{post_obj.title} - Página - '
-
-    return render(
-        request,
-        'blog/pages/post.html',
-        {
-            'post': post_obj,
+    def get_context_data(self, **kwargs):
+        ctx = super().get_context_data(**kwargs)
+        post = self.get_object()
+        page_title = f'{post.title} - Post - '
+        ctx.update({
             'page_title': page_title,
-        }
-    )
+        })
+        return ctx
+    
+    def get_queryset(self):
+        return super().get_queryset().filter(is_published=True)
+
